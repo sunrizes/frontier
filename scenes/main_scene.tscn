@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://by83nobqsq7y0"]
+[gd_scene load_steps=4 format=3 uid="uid://by83nobqsq7y0"]
 
 [ext_resource type="Script" uid="uid://bc8yvdri0im51" path="res://scripts/gameplay/grid_generator.gd" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://bdyatjgre31vn" path="res://scenes/gameplay/tile.tscn" id="2_pw63i"]
+[ext_resource type="Resource" uid="uid://b77tk0kvtadkl" path="res://resources/board_standard_4p.tres" id="3_7ykc4"]
 
 [node name="main_scene" type="Node3D"]
 
 [node name="grid_generator" type="Node3D" parent="."]
 script = ExtResource("1_w2twt")
+tile = ExtResource("2_pw63i")
+board_settings = ExtResource("3_7ykc4")
 
 [node name="cam" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
