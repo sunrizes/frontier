@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=4 uid="uid://bdyatjgre31vn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g24c"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n7oq7"]
+_surfaces = [{
+"aabb": AABB(-1, -0.866025, -0.05, 2, 1.73205, 0.1),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAgAEAAMAAgABAAQAAAADAAUABAAFAAMABgAAAAUAAQAHAAQABgAFAAgAAQAJAAcACgAAAAYAAQAAAAoACgAGAAgAAQAKAAkABQAEAAsABQALAAgACwAEAAcACgAIAAsACQALAAcACQAKAAsA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAv9ezXT/QzEy9AACAPwAAAADQzEy9AAAAP9ezXT/QzEy9AAAAP9ezXT/QzEw9AACAPwAAAADQzEw9AAAAv9ezXT/QzEw9AACAvwAAAADQzEy9AAAAP9ezXb/QzEw9AACAvwAAAADQzEw9AAAAP9ezXb/QzEy9AAAAv9ezXb/QzEy9AAAAv9ezXb/QzEw9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sycs6"]
+resource_name = "hexagon_tile_Cylinder"
+_surfaces = [{
+"aabb": AABB(-1, -0.866025, -0.05, 2, 1.73205, 0.1),
+"attribute_data": PackedByteArray("mcoKP65HIT9nNXU/rkchPwAAQD9cjwI/AABAP6RwfT+Zygo/UrheP2c1dT9SuF4/ZzV1P65HIT+Zygo/rkchPwAAQD9cjwI/AABAP6RwfT9nNXU/UrheP5nKCj9SuF4/mcoKP1K4Xj+Zygo/rkchP5nKCj9SuF4/mcoKP65HIT9nNXU/UrhePwAAQD+kcH0/ZzV1P1K4Xj8AAEA/pHB9PwAAQD9cjwI/ZzV1P65HIT8AAEA/XI8CP2c1dT+uRyE/mcoKP65HIT8AAEA/XI8CP5nKCj+uRyE/AABAP1yPAj8AAEA/pHB9P5nKCj9SuF4/AABAP6RwfT+Zygo/UrheP2c1dT+uRyE/ZzV1P1K4Xj9nNXU/rkchP2c1dT9SuF4/"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAwAAAAQAAQADAAUABgAHAAgABwAGAAkACQAGAAoABwAJAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
+"material": SubResource("StandardMaterial3D_7g24c"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAv9ezXT/QzEy9AACAPwAAAADQzEy9AAAAP9ezXT/QzEy9AAAAv9ezXb/QzEy9AACAvwAAAADQzEy9AAAAP9ezXb/QzEy9AACAPwAAAADQzEw9AAAAv9ezXT/QzEw9AAAAP9ezXT/QzEw9AAAAv9ezXb/QzEw9AAAAP9ezXb/QzEw9AACAvwAAAADQzEw9AACAvwAAAADQzEy9AAAAv9ezXT/QzEw9AACAvwAAAADQzEw9AAAAv9ezXT/QzEy9AAAAP9ezXb/QzEy9AAAAv9ezXb/QzEw9AAAAP9ezXb/QzEw9AAAAv9ezXb/QzEy9AAAAP9ezXT/QzEy9AACAPwAAAADQzEw9AAAAP9ezXT/QzEw9AACAPwAAAADQzEy9AAAAv9ezXT/QzEy9AAAAP9ezXT/QzEw9AAAAv9ezXT/QzEw9AAAAP9ezXT/QzEy9AAAAv9ezXb/QzEy9AACAvwAAAADQzEw9AAAAv9ezXb/QzEw9AACAvwAAAADQzEy9AACAPwAAAADQzEy9AAAAP9ezXb/QzEw9AACAPwAAAADQzEw9AAAAP9ezXb/QzEy9/////yXRbFf/////JdFsV/////8l0WxX/////yXRbFf/////JdFsV/////8l0WxX/3//fyXRkqj/f/9/JdGSqP9//38l0ZKo/3//fyXRkqj/f/9/JdGSqP9//38l0ZKo2S7Zrv///7/ZLtmu////v9ku2a7///+/2S7Zrv///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vyXR2a7///+/JdHZrv///78l0dmu////vyXR2a7///+//3///////7//f///////v/9///////+//3///////7/ZLiVR////v9kuJVH///+/2S4lUf///7/ZLiVR////vyXRJVH///+/JdElUf///78l0SVR////vyXRJVH///+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n7oq7")
+
+[node name="tile" type="Node3D"]
+
+[node name="hexagon_tile" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sycs6")
+skeleton = NodePath("")
