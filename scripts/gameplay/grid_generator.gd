@@ -4,15 +4,17 @@ extends Node
 @export var board_settings: BoardSettings
 @export var hex_size: float = 1.0
 
-func _ready() -> void:
-	var coordinates = generate_positions(board_settings.board_radius)
+var spawned_tiles: Array[Tile] = []
 
-	var types = board_settings.tile_types.duplicate()
+func _ready() -> void:
+	var coordinates: Array[Vector2i] = generate_positions(board_settings.board_radius)
+
+	var types: Array[Util.RESOURCE] = board_settings.tile_types.duplicate()
 	types.shuffle()
-	var numbers = board_settings.tile_numbers.duplicate()
+	var numbers: Array[int] = board_settings.tile_numbers.duplicate()
 	numbers.shuffle()
 
-	var number_index := 0
+	var number_index: int = 0
 
 	for i in range(coordinates.size()):
 		var new_tile = tile.instantiate()
@@ -24,12 +26,16 @@ func _ready() -> void:
 
 		if res != Util.RESOURCE.DESERT:
 			num = numbers[number_index]
-			number_index += 1  # only move forward for non-desert tiles
+			number_index += 1
 
-		if new_tile.has_method("setup"):
-			new_tile.setup(res, num)
+		new_tile.setup(res, num)
+		
+		spawned_tiles.append(new_tile)
 
 		add_child(new_tile)
+	
+	for i in range(spawned_tiles.size()):
+		print(spawned_tiles[i].name)
 
 func tile_to_board(q: int, r: int, size: float) -> Vector3:
 	var x = size * sqrt(3) * (q + r/2.0)

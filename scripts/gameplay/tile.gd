@@ -3,6 +3,7 @@ class_name Tile
 
 @export var resource: Util.RESOURCE = Util.RESOURCE.DESERT
 @export var number: int = -1
+@export var vertices: Array[Vertex]
 
 #Visuals
 @export var tile_mesh: MeshInstance3D
@@ -11,6 +12,9 @@ class_name Tile
 func setup(resource_type: Util.RESOURCE, tile_number: int) -> void:
 	resource = resource_type
 	number = tile_number
+	self.name = str(Util.RESOURCE.keys()[resource_type]) + "_" + str(number) + "_" + str(randi())
+	for i in range(vertices.size()):
+		vertices[i].number = number
 	update_visual()
 	
 func update_visual() -> void:
@@ -28,4 +32,7 @@ func update_visual() -> void:
 		Util.RESOURCE.WOOL:
 			tile_mesh.material_override = Util.tile_material_wool
 	
-	number_visual.text = str(number)
+	if number != -1:
+		number_visual.text = str(number)
+	else:
+		number_visual.text = ""
