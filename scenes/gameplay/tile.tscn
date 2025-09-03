@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=4 uid="uid://bdyatjgre31vn"]
+[gd_scene load_steps=5 format=4 uid="uid://bdyatjgre31vn"]
+
+[ext_resource type="Script" uid="uid://baemfqnriddrw" path="res://scripts/gameplay/tile.gd" id="1_tyvhr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g24c"]
 
@@ -32,9 +34,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n7oq7")
 
-[node name="tile" type="Node3D"]
+[node name="tile" type="Node3D" node_paths=PackedStringArray("tile_mesh", "number_visual")]
+script = ExtResource("1_tyvhr")
+tile_mesh = NodePath("hexagon_tile")
+number_visual = NodePath("number_visual")
 
 [node name="hexagon_tile" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
 mesh = SubResource("ArrayMesh_sycs6")
 skeleton = NodePath("")
+
+[node name="number_visual" type="Label3D" parent="."]
+transform = Transform3D(1, -1.23002e-14, -3.55271e-15, 0, -4.37114e-08, 1, -1.06581e-14, -1, -4.37114e-08, 1.31134e-08, 0.1, 0.4)
+text = "999"
+font_size = 64
